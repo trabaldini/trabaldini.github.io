@@ -245,10 +245,18 @@ header .header-content .header-content-inner p {
   .math p, a {
     font-size: 10px;
   }
+
+  td {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 374px) {
   .math p, a {
+    font-size: 7px;
+  }
+
+  td {
     font-size: 7px;
   }
 }
