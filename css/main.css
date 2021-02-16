@@ -175,8 +175,8 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  /*background-image: url("../img/header.jpg");*/
-  background-color: rgb(143, 0, 50);
+  background-image: url("../img/header.png");
+  /*background-color: rgb(143, 0, 50);*/
   text-align: center;
   color: white; 
 }
@@ -189,6 +189,8 @@ header .header-content {
 }
 
 header .header-content .header-content-inner h1 {
+  font-family: john-doe, sans-serif;
+  font-size: 35px;
   font-weight: 600;
   /*text-transform: uppercase;*/
   margin-top: 0;
@@ -198,13 +200,14 @@ header .header-content .header-content-inner h1 {
 
 header .header-content .header-content-inner hr {
   margin: 30px auto; 
-  border-color: #222;
+  border-color: white;
 }
 
 header .header-content .header-content-inner p {
-  font-weight: 300;
+  font-family: john-doe, sans-serif;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 50px; 
   line-height: 2;
 }
@@ -227,7 +230,7 @@ header .header-content .header-content-inner p {
     margin-right: auto; 
   }
   header .header-content .header-content-inner p {
-    font-size: 18px;
+    font-size: 20px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto; 
@@ -254,6 +257,15 @@ header .header-content .header-content-inner p {
 }
 
 @media (max-width: 374px) {
+  header .header-content {
+    padding: 80px 5px 10px;
+  }
+
+  header .header-content .header-content-inner h1 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+
   .math p, a {
     font-size: 7px;
   }
