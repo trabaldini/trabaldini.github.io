@@ -247,6 +247,16 @@ header .header-content .header-content-inner p {
 }
 
 @media (max-width: 767px) {
+
+  header .header-content {
+    padding: 80px 5px 80px;
+  }
+
+  header .header-content .header-content-inner h1 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+
   .math p, a {
     font-size: 10px;
   }
@@ -257,14 +267,6 @@ header .header-content .header-content-inner p {
 }
 
 @media (max-width: 374px) {
-  header .header-content {
-    padding: 80px 5px 10px;
-  }
-
-  header .header-content .header-content-inner h1 {
-    font-weight: 400;
-    font-size: 20px;
-  }
 
   .math p, a {
     font-size: 7px;
