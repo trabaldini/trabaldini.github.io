@@ -1,6 +1,6 @@
 # trabaldini.github.io
 
-My personal website with funny and interesting content!
+My personal website, work in progress!
 
 ### Run locally
 
