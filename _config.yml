@@ -1,34 +1,64 @@
-# filepath: /Users/trabaldini/Development/trabaldini.github.io/_config.yml
 title: trabaldini collection
 email: emanuela@trabaldo.de
-description: >- # this means to ignore newlines until "baseurl:"
+description: >- 
   A portfolio of some projects and math stuff
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://trabaldo.de" # the base hostname & protocol for your site
-twitter_username: trabaldini
-github_username:  trabaldini
+
+# SEO settings
+lang: en
+author:
+  name: Emanuela Trabaldo Lena
+  twitter: trabaldini
+  github: trabaldini
 
 # Build settings
 markdown: kramdown
 theme: minima
+permalink: /blog/:year/:month/:day/:title/
+sass:
+  style: compressed
+  sourcemap: never
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+
+# Optimization
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
+# Performance
+incremental: true
+livereload: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-compress-images
 
-# Exclude from processing.
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - .sass-cache/
-  - .jekyll-cache/
-  - .jekyll-metadata
-  - _site/
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .git
+  - .github
   - .DS_Store
-
-# Enable incremental build
-incremental: true

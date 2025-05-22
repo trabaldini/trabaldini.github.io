@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "bundle exec jekyll serve --incremental --livereload",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}
