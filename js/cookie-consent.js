@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const cookieConsent = document.getElementById('cookieConsent');
+    const cookieOverlay = document.getElementById('cookieConsentOverlay');
     const acceptButton = document.getElementById('acceptCookies');
-    const declineButton = document.getElementById('declineCookies');
+    const denyButton = document.getElementById('denyCookies');
 
     function setCookie(name, value, days) {
         const date = new Date();
@@ -15,25 +16,48 @@ document.addEventListener('DOMContentLoaded', function() {
         if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
-    if (!getCookie('cookieConsent')) {
+    function showConsentDialog() {
+        cookieOverlay.classList.remove('hidden');
+        cookieOverlay.classList.add('visible');
         cookieConsent.classList.remove('hidden');
+        cookieConsent.classList.add('visible');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideConsentDialog() {
+        cookieOverlay.classList.remove('visible');
+        cookieOverlay.classList.add('hidden');
+        cookieConsent.classList.remove('visible');
+        cookieConsent.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (!getCookie('cookieConsent')) {
+        showConsentDialog();
+    } else if (getCookie('cookieConsent') === 'accepted') {
+        // Only start GA if consent was previously accepted
+        gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-49FKR4VRLD');
     }
 
     acceptButton.addEventListener('click', () => {
         setCookie('cookieConsent', 'accepted', 365);
-        cookieConsent.classList.add('hidden');
-        // Enable Google Analytics
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        hideConsentDialog();
+        
+        // Enable and initialize Google Analytics
         gtag('consent', 'update', {
             'analytics_storage': 'granted'
         });
+        gtag('js', new Date());
+        gtag('config', 'G-49FKR4VRLD');
     });
 
-    declineButton.addEventListener('click', () => {
+    denyButton.addEventListener('click', () => {
         setCookie('cookieConsent', 'declined', 365);
-        cookieConsent.classList.add('hidden');
-        // Disable Google Analytics
-        window['ga-disable-G-49FKR4VRLD'] = true;
+        hideConsentDialog();
+        // No need to update gtag consent since GA won't be initialized
     });
 });

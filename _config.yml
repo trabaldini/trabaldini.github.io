@@ -1,5 +1,6 @@
 title: trabaldini collection
 email: emanuela@trabaldo.de
+github: trabaldini
 description: >- 
   A portfolio of some projects and math stuff
 
@@ -7,8 +8,6 @@ description: >-
 lang: en
 author:
   name: Emanuela Trabaldo Lena
-  twitter: trabaldini
-  github: trabaldini
 
 # Build settings
 markdown: kramdown

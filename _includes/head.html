@@ -27,19 +27,26 @@
 
     <!-- Cookie Consent -->
     <link rel="stylesheet" href="css/cookie-consent.css" type="text/css">
+
+    <!-- Privacy Policy -->
+    <link rel="stylesheet" href="css/privacy-policy.css" type="text/css">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-49FKR4VRLD"></script>
     <script>
+        // Initialize dataLayer but don't start tracking
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        // Default to denied
+
+        // Set default consent to denied
         gtag('consent', 'default', {
             'analytics_storage': 'denied'
         });
-        
-        gtag('config', 'G-49FKR4VRLD');
+
+        // Only initialize GA with granted consent
+        if (document.cookie.indexOf('cookieConsent=accepted') > -1) {
+            gtag('js', new Date());
+            gtag('config', 'G-49FKR4VRLD');
+        }
     </script>
 </head>

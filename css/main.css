@@ -237,6 +237,38 @@ header .header-content .header-content-inner p {
   } 
 }
 
+.support-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.paypal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 7px 7px;
+    border-radius: 40px;
+    min-height: 50px;
+    min-width: 210px;
+    transition: transform 0.2s;
+}
+
+.paypal-button img {
+    height: 25px;
+    width: auto;
+    background: white;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.paypal-button:hover {
+    transform: scale(1.05);
+}
+
 .math li {
   margin-bottom: 30px;
 }
@@ -439,7 +471,7 @@ header .header-content .header-content-inner p {
 }
 
 .btn-xl {
-  padding: 15px 30px; 
+  padding: 25px 50px; 
 }
 
 #contact .fa {
